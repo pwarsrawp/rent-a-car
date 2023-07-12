@@ -1,12 +1,77 @@
 body {
   padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  background-color: goldenrod;
 }
 
 a {
-  color: #00b7ff;
+  color: white;
+  text-decoration: none;
 }
 
 h1 {
   color: 15px;
+}
+
+.homepage{
+  width: 600px;
+  margin:0 auto;
+  height: 100%;
+  background-color: rgb(47, 46, 45);
+  border-radius: 50px;
+
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  padding: 4rem 0.2rem;
+  box-shadow: 1px 1px rgba(0, 0,0, 0.3);
+}
+.homepage img{
+
+  max-width: 80%;
+  margin: 0 auto;
+}
+.homepage h3{
+
+  font-size: 2rem;
+  color:goldenrod;
+}
+.container{
+  width:100%;
+  margin: 0 auto;
+  text-align: center;
+}
+.buttons{
+  margin: 0 auto;
+  display: flex;
+  gap:2rem;
+}
+.buttons a{
+  background-color: goldenrod;
+  color: aliceblue;
+  padding: 1rem 2rem;
+  border-radius: 4px;
+  cursor: pointer;
+}
+.buttons a:hover{
+  background-color: rgb(182, 138, 27);
+}
+.brand{
+  text-shadow: 1px 1px rgba(0, 0,0, 0.3);
+  color: rgba(142, 104, 9, 0.6);
+  font-size: 4rem;
+}
+
+@media screen and (max-width: 500px) {
+  .homepage{
+    width: 100%;
+  }
+  .buttons{
+    margin: 0 auto;
+    display: flex;
+    gap:2rem;
+    flex-direction: column;
+  }
+
+  
 }
