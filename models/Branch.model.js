@@ -2,7 +2,7 @@ const { Schema, model } = require("mongoose");
 
 const branchSchema = new Schema(
   {
-    Name: String,
+    name: String,
   },
   {
     timestamps: true,
