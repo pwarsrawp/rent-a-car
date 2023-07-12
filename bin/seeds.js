@@ -5,7 +5,7 @@ const Branch = require("../models/Branch.model");
 const Car = require("../models/Car.model");
 
 const MONGO_URI =
-  process.env.MONGODB_URI || "mongodb://127.0.0.1/ren-a-car";
+  process.env.MONGODB_URI || "mongodb://127.0.0.1/rent-a-car";
 
 mongoose
   .connect(MONGO_URI)
