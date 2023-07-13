@@ -13,7 +13,7 @@ router.get("/signup", (req, res, next) => {
   res.render("auth/signup");
 });
 
-//SIGN UP POST
+//SIGN UP POSTTTT
 router.post("/signup", async (req, res, next) => {
   tempUser = { ...req.body };
   console.log("body copy", tempUser);
