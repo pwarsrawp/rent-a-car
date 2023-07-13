@@ -1,9 +1,24 @@
-<h1>User Profile Page</h1>
 
-<% bookings.forEach(booking => { %>
- <ul>
-    <li><h2><%- booking.startDate%><%- booking.endDate%></h2></li>
- </ul>
-<% }) %>
+
+
+
+
+<div class="homepage">
+   <h3>Welcome back <%- user.username %></h3>
+
+   <h3>Your Bookings</h3>
+
+   <% bookings.forEach(booking => { %>
+      <div class="booking">
+         <h2>Start date: <%- booking.startDate%> </h2>
+         <h2>End date:  <%- booking.endDate%></h2>
+         <h2>Model car: <%- booking.car.brand  %>   <%- booking.car.model  %>   </h2>
+         <h2>Total: <%- booking.total  %>  €  </h2>
+         <a class="button" href="/book/<%- booking._id %>/delete">cancel book</a>
+      </div>
+     <% }) %>
+</div>
+
+
 
 

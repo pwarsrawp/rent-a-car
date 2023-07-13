@@ -35,7 +35,14 @@
    <div class="picture">
           <img src="<%- car.img %>" alt="">
    </div>
+
+
    <form action="/book/<%- car._id%>" method="post" class="form-detail">
+
+    <% if(typeof errorMsg!= 'undefined'){ %>
+        <div class="alert alert-danger"><%-errorMsg %> </div>
+     <%  } %>
+
     <select name="branch" class="form-control" >
 
         <% branches.forEach(branch => { %>

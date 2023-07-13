@@ -34,7 +34,10 @@ router.post("/signup", async (req, res, next) => {
 router.get("/login", isLoggedOut, (req, res, next) => {
   res.render("auth/login");
 });
-
+router.get("/logout", (req, res, next) => {
+  req.session.destroy();
+  res.redirect("/");
+});
 //LOG IN POST
 router.post("/login", async (req, res) => {
     try {
@@ -51,7 +54,8 @@ router.post("/login", async (req, res) => {
           checkUser.passwordHash = "****";
           console.log(req.session)
           req.session.currentUser = checkUser;
-          res.render("users/user-profile", {checkUser});
+          res.redirect('/profile')
+        //  res.render("users/user-profile", {checkUser});
         } else {
           res.render("auth/login", { errorMessage: "Try again please" });
         }
@@ -66,9 +70,10 @@ router.post("/login", async (req, res) => {
 
   //USER PROFILE GET
 router.get("/profile", isLoggedIn, async (req, res, next) => {
-    const bookings = await Booking.find({userId: req.session.currentUser})
+    const bookings = await Booking.find({userId: req.session.currentUser}).populate("car")
+    const user=await User.findById(req.session.currentUser)
     console.log(bookings)
-    res.render("users/user-profile", {bookings});
+    res.render("users/user-profile", {bookings, user,  userid: req.session.currentUser});
   });
 
 module.exports = router;

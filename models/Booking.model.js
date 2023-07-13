@@ -14,7 +14,8 @@ const bookingSchema = new Schema(
       type: String,
     },
     car: {
-      type: String,
+      type: Schema.ObjectId,
+      ref: 'Car'
     },
     branch: {
       type: String,

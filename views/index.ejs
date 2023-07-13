@@ -6,8 +6,13 @@
    <img src="https://pngimg.com/uploads/tesla_car/tesla_car_PNG46.png" alt="tesla" >
    <h3>Get Started</h3>
 <div class="buttons">
-    <a href="/signup">Sign Up</a>
-    <a href="/login">Log In</a>
+    <% if (typeof userid!='undefined') { %>
+        <a href="/cars">Select a car</a>
+    <% }else{ %>
+        <a href="/signup">Sign Up</a>
+        <a href="/login">Log In</a>
+    <% } %>    
+    
 </div>
 
 </div>

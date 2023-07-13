@@ -16,8 +16,12 @@
     <ul>
       <li><a href="/">home</a></li>
       <li><a href="/cars">Check all cars</a></li>
+     <% if (typeof userid!='undefined') { %>
+   <li><a href="/logout/">logout</a>  </li> 
+     <% }else{ %>
       <li><a href="/signup">sign up</a></li>
       <li><a href="/login">login</a></li>
+      <% } %>
     </ul>
 
    </nav>
