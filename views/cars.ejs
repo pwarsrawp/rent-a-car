@@ -1,0 +1,8 @@
+<h1>Choose your car</h1>
+
+
+<% allCars.forEach(car => { %>
+ <img src="<%- car.img %>" alt="">
+ <h3><%- car.brand %></h3><h3><%- car.model %></h3>
+ <hr>
+<% }) %>
