@@ -4,20 +4,24 @@ const bookingSchema = new Schema(
   {
     startDate: {
       type: String,
-      trim: true,
-      required: false,
-      unique: true,
+      required: true,
     },
     endDate: {
       type: String,
       required: true,
-      unique: true,
-      lowercase: true,
-      trim: true,
     },
-    password: {
+    userId: {
+      type: String,
+    },
+    car: {
+      type: String,
+    },
+    branch: {
       type: String,
       required: true,
+    },
+    total: {
+      type: Number,
     },
   },
   {

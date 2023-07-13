@@ -2,6 +2,7 @@
 const router = require("express").Router();
 const bcrypt = require("bcryptjs");
 const User = require("../models/User.model");
+const Booking = require("../models/Booking.model");
 const salt = bcrypt.genSaltSync(13);
 
 const { isLoggedOut, isLoggedIn } = require("../middleWares/route-protect.js");
@@ -64,8 +65,10 @@ router.post("/login", async (req, res) => {
 
 
   //USER PROFILE GET
-router.get("/profile", isLoggedIn, (req, res, next) => {
-    res.render("users/user-profile");
+router.get("/profile", isLoggedIn, async (req, res, next) => {
+    const bookings = await Booking.find({userId: req.session.currentUser})
+    console.log(bookings)
+    res.render("users/user-profile", {bookings});
   });
 
 module.exports = router;

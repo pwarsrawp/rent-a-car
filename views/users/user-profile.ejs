@@ -1,3 +1,9 @@
 <h1>User Profile Page</h1>
 
-<a href="/cars"></a>
+<% bookings.forEach(booking => { %>
+ <ul>
+    <li><h2><%- booking.startDate%><%- booking.endDate%></h2></li>
+ </ul>
+<% }) %>
+
+
