@@ -1,17 +1,18 @@
-<h1>Signup Page</h1>
 
-<form action="/signup" method="post">
-  <label>Username:
-    <input type="text" name="username" required />
-  </label>
-  <label>Age:
-    <input type="number" name="age" required />
-  </label>
-  <label>Email:
-    <input type="email" name="email" required />
-  </label>
-  <label>Password:
-    <input type="password" name="password" required />
-  </label>
+
+<form action="/signup" method="post" class="form">
+  <h3>Signup Page</h3>
+
+    <input type="text" class="form-control" name="username" required placeholder="your username"/>
+
+  
+    <input type="number" class="form-control"  name="age" required placeholder="your age" />
+
+ 
+    <input type="email" class="form-control"  name="email" required  placeholder="your email"/>
+
+ 
+    <input type="password" class="form-control"  name="password" required placeholder="your password" />
+
   <button type="submit">Signup</button>
 </form>

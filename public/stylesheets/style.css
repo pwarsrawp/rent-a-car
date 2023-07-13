@@ -19,12 +19,12 @@ h1 {
   height: 100%;
   background-color: rgb(47, 46, 45);
   border-radius: 50px;
-
+  padding: 4rem 0.2rem;
+  box-shadow: 1px 1px rgba(0, 0,0, 0.3);
   text-align: center;
   display: flex;
   flex-direction: column;
-  padding: 4rem 0.2rem;
-  box-shadow: 1px 1px rgba(0, 0,0, 0.3);
+
 }
 .homepage img{
 
@@ -62,8 +62,134 @@ h1 {
   font-size: 4rem;
 }
 
+
+.form {
+  display: flex;
+  flex-direction: column;
+  width: 400px;
+  margin:0 auto;
+  height: 100%;
+  background-color: rgb(47, 46, 45);
+  border-radius: 50px;
+  padding: 4rem;
+  box-shadow: 1px 1px rgba(0, 0,0, 0.3);
+  gap: 2rem;
+}
+.form h3{
+
+  font-size: 2rem;
+  color:goldenrod;
+}
+
+.form button{
+  background-color: goldenrod;
+  color: aliceblue;
+  padding: 1rem 2rem;
+  border-radius: 4px;
+  cursor: pointer;
+}
+.navbar{
+  text-align: center;
+  padding: 0.4rem;
+  border-bottom: 1px solid rgba(0, 0,0, 0.2);
+  margin: 0 auto;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+.navbar ul{
+list-style: none;
+display: flex;
+gap: 2rem;
+justify-content: center;
+align-items: center;
+}
+.navbar ul li a{
+  font-weight: bold;
+  text-transform: capitalize;
+  font-size: 1rem;
+  text-shadow: 1px 1px rgba(0, 0,0, 0.3);
+}
+.navbar ul li a:hover{
+  color: rgb(208, 211, 214);
+}
+
+
+
+.carousel{
+  background-color: rgb(47, 46, 45);
+  border-radius: 50px;
+  padding: 4rem;
+  box-shadow: 1px 1px rgba(0, 0,0, 0.3);
+}
+
+
+.carousel-caption {
+left: 50%;
+top: 20%;
+padding: 1rem;
+
+}
+.carousel-caption h3{
+  margin-bottom: 1rem;
+}
+.carousel-caption a{
+  background-color: goldenrod;
+  color: aliceblue;
+  padding: 1rem 2rem;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-top: 1rem;
+  display: block;
+
+}
+
+.details{
+  width:800px;
+  margin: 0 auto;
+  display: flex;
+  gap: 4rem;
+  background-color: rgb(47, 46, 45);
+  border-radius: 50px;
+  padding: 4rem;
+  box-shadow: 1px 1px rgba(0, 0,0, 0.3);
+  flex-wrap: wrap;
+}
+.info{
+  color: white;
+  font-size: 1.2rem;
+}
+.info ul{
+  list-style: none;
+  text-align: left;
+  padding-top: 2rem;
+}
+.info ul li{
+  margin-top: 1rem;
+}
+
+.form-detail {
+  display: flex;
+  padding: 1rem;
+  gap: 1rem;
+}
+
+.form-detail button{
+  background-color: goldenrod;
+  color: aliceblue;
+  padding: 1rem 2rem;
+  border-radius: 4px;
+  cursor: pointer;
+ 
+  display: block;
+}
+.title{
+  font-size: 2rem;
+  color: rgba(142, 104, 9, 0.6);
+  text-shadow: 1px 1px rgba(0, 0,0, 0.3);
+}
 @media screen and (max-width: 500px) {
-  .homepage{
+  .homepage, .form{
     width: 100%;
   }
   .buttons{
@@ -72,6 +198,24 @@ h1 {
     gap:2rem;
     flex-direction: column;
   }
-
+  .navbar ul{
+    flex-direction: column;
+  }
+  .info ul{
+    text-align: center;
+  }
   
+  .details{
+    width: 100%;
+    flex-direction: column;
+    padding: 0.5rem;
+  }
+  .form-detail {
+    flex-direction: column;
+    width: 100%;
+  }
+  .picture img{
+    width: 100%;
+    background-size: cover;
+  }
 }
