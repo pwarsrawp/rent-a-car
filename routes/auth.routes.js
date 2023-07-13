@@ -1,5 +1,3 @@
-<<<<<<< HEAD
-=======
 //REQUIRED AND VARIABLES
 const router = require("express").Router();
 const bcrypt = require("bcryptjs");
@@ -69,6 +67,5 @@ router.post("/login", async (req, res) => {
 router.get("/profile", isLoggedIn, (req, res, next) => {
     res.render("users/user-profile");
   });
->>>>>>> mario
 
 module.exports = router;
