@@ -1,7 +1,14 @@
+@import url('https://fonts.googleapis.com/css2?family=Kaushan+Script&family=Roboto:wght@300;400;700&display=swap');
+
+/* 
+font-family: 'Roboto', sans-serif; 
+font-family: 'Kaushan Script', cursive;
+*/
+
 body {
   padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
   background-color: goldenrod;
+  font-family: 'Roboto', sans-serif;
 }
 
 a {
@@ -92,6 +99,7 @@ ul {
 
 .form button{
   background-color: goldenrod;
+  font-weight: 700;
   color: aliceblue;
   padding: 1rem 2rem;
   border-radius: 4px;
@@ -101,10 +109,10 @@ ul {
   text-align: center;
   padding: 0.4rem;
   border-bottom: 1px solid rgba(0, 0,0, 0.2);
-  margin: 0 auto;
+  margin: 0 auto 2rem auto;
   width: 100%;
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
 }
 .navbar ul{
 list-style: none;
@@ -115,13 +123,44 @@ align-items: center;
 }
 .navbar ul li a{
   font-weight: bold;
-  text-transform: capitalize;
-  font-size: 1rem;
+  text-transform: uppercase;
+  font-size: 1.7rem;
   text-shadow: 1px 1px rgba(0, 0,0, 0.3);
 }
 .navbar ul li a:hover{
   color: rgb(208, 211, 214);
 }
+
+.logo-container {
+  display: flex;
+  width: 150px;
+  align-items: center;
+}
+
+.logo-container img {
+  width: 130px;
+}
+
+.profile-icon-container {
+  display: flex;
+  justify-content: flex-end;
+  width: 130px;
+}
+
+#menu-button {
+  display: none;
+}
+
+.icons-desktop {
+  width: 50px;
+}
+
+.slogan {
+  font-size: 1.3rem;
+  font-family: 'Kaushan Script', cursive;
+  color: aliceblue;
+}
+
 
 
 
@@ -192,6 +231,17 @@ padding: 1rem;
  
   display: block;
 }
+.signup-text {
+  color: aliceblue;
+}
+.signup-text a {
+  color: #888;
+}
+.signup-text a:hover {
+  color: goldenrod;
+}
+
+
 .title{
   font-size: 2rem;
   color: rgba(142, 104, 9, 0.6);
@@ -272,7 +322,7 @@ padding: 1rem;
 .mobile-layout{
 display: none;
 }
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 800px) {
   .homepage, .form{
     width: 100%;
   }
@@ -282,9 +332,41 @@ display: none;
     gap:2rem;
     flex-direction: column;
   }
-  .navbar ul{
+  .navbar {
+    position: relative;
+  }
+  .navbar ul {
+    display: none;
+    right: 0%;
+    top: 60%;
     flex-direction: column;
-  }  
+    background-color: goldenrod;
+    position: absolute;
+    padding: 2rem;
+    border-radius: 20px;
+    border: 1px solid black;
+  }
+  .logo-container {
+    display: flex;
+    width: 100px;
+    align-items: center;
+  }
+  
+  .logo-container img {
+    width: 100px;
+  }
+  
+  .profile-icon-container {
+    display: flex;
+    width: 40px;
+  }
+  .profile-icon-container img {
+    width: 40px;
+  }
+  #menu-button {
+    display: block;
+  }
+
   .details{
     width: 100%;
     flex-direction: column;
