@@ -1,24 +1,20 @@
-
-
-
-
-
 <div class="homepage">
-   <h3>Welcome back <%- user.username %></h3>
+  <h3>Your Bookings</h3>
+  <div class="booking-container">
 
-   <h3>Your Bookings</h3>
-
-   <% bookings.forEach(booking => { %>
-      <div class="booking">
-         <h2>Start date: <%- booking.startDate%> </h2>
-         <h2>End date:  <%- booking.endDate%></h2>
-         <h2>Model car: <%- booking.car.brand  %>   <%- booking.car.model  %>   </h2>
-         <h2>Total: <%- booking.total  %>  €  </h2>
-         <a class="button" href="/book/<%- booking._id %>/delete">cancel book</a>
+    <% bookings.forEach(booking => { %>
+    <div class="booking">
+      <img class="card-img-top" src="<%- booking.car.img%>" alt="car image">
+      <div class="booking-body">
+        <h5 class="booking-title"><%- booking.car.brand  %> <%- booking.car.model  %></h5>
+        <p class="booking-text"><%- booking.startDate%> - <%- booking.endDate%></p>
+        <p class="booking-text"><%- booking.total  %>€</p>
+        <div class="booking-buttons">
+          <a class="button" href="/book/<%- booking._id %>">Details</a>
+          <a class="button" href="/book/<%- booking._id %>/delete">Cancel</a>
+        </div>
       </div>
-     <% }) %>
+    </div>
+    <% }) %>
+  </div>
 </div>
-
-
-
-

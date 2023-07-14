@@ -13,6 +13,12 @@ h1 {
   color: 15px;
 }
 
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
 .homepage{
   width: 600px;
   margin:0 auto;
@@ -189,12 +195,20 @@ padding: 1rem;
 .title{
   font-size: 2rem;
   color: rgba(142, 104, 9, 0.6);
-  text-shadow: 1px 1px rgba(0, 0,0, 0.3);
+  text-shadow: 1px 1px rgba(0, 0, 0, 0.3);
 }
 
 .booking{
   list-style: none;
   color: aliceblue;
+  box-shadow: 1px 1px rgba(0, 0, 0, 0.3);
+  background-color: rgba(0, 0, 0, 0.3);
+  border-radius: 15px;
+  
+}
+
+.booking:hover {
+  background-color: rgba(0, 0, 0, 0.5);  
 }
 
 .button{
@@ -203,6 +217,26 @@ padding: 1rem;
   padding: 1rem 2rem;
   border-radius: 4px;
   cursor: pointer;
+}
+
+.booking-container {
+  display: flex;
+  justify-content: space-around;
+  gap: 1.2rem;
+  padding: 1rem;
+}
+
+.booking-buttons {
+  margin: 1rem 0;
+}
+
+.booking-body {
+  padding: 1rem;
+}
+
+.booking-text {
+  padding-bottom: 2rem;
+  margin: 0;
 }
 
 @media screen and (max-width: 500px) {
@@ -217,11 +251,7 @@ padding: 1rem;
   }
   .navbar ul{
     flex-direction: column;
-  }
-  .info ul{
-    text-align: center;
-  }
-  
+  }  
   .details{
     width: 100%;
     flex-direction: column;
@@ -235,4 +265,19 @@ padding: 1rem;
     width: 100%;
     background-size: cover;
   }
+  .booking-container {
+    flex-direction: column;
+    align-items: center;
+  }
+  .booking {
+    width: 100%;
+  }
+
+  .booking-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+
 }

@@ -17,11 +17,11 @@ router.get("/signup", (req, res, next) => {
 //SIGN UP POSTTTT
 router.post("/signup", async (req, res, next) => {
   tempUser = { ...req.body };
-  console.log("body copy", tempUser);
+  //console.log("body copy", tempUser);
   delete tempUser.password;
-  console.log("deleted password", tempUser);
+  //console.log("deleted password", tempUser);
   tempUser.passwordHash = bcrypt.hashSync(req.body.password, salt);
-  console.log("after injecting new password", tempUser);
+  //console.log("after injecting new password", tempUser);
   try {
     const newUser = await User.create(tempUser);
     res.redirect("/login");
@@ -42,7 +42,7 @@ router.get("/logout", (req, res, next) => {
 router.post("/login", async (req, res) => {
     try {
       const checkUser = await User.findOne({ username: req.body.username });
-       console.log("checkUser:", checkUser);
+       //console.log("checkUser:", checkUser);
       if (checkUser) {
         let doesPasswordMatch = bcrypt.compareSync(
           req.body.password,
@@ -52,7 +52,7 @@ router.post("/login", async (req, res) => {
         
         if (doesPasswordMatch) {
           checkUser.passwordHash = "****";
-          console.log(req.session)
+          //console.log(req.session)
           req.session.currentUser = checkUser;
           res.redirect('/profile')
         //  res.render("users/user-profile", {checkUser});
@@ -72,7 +72,7 @@ router.post("/login", async (req, res) => {
 router.get("/profile", isLoggedIn, async (req, res, next) => {
     const bookings = await Booking.find({userId: req.session.currentUser}).populate("car")
     const user=await User.findById(req.session.currentUser)
-    console.log(bookings)
+    //console.log(bookings)
     res.render("users/user-profile", {bookings, user,  userid: req.session.currentUser});
   });
 
