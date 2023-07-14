@@ -114,7 +114,7 @@ ul {
   display: flex;
   justify-content: space-between;
 }
-.navbar ul{
+.menu{
 list-style: none;
 display: flex;
 gap: 2rem;
@@ -322,6 +322,9 @@ padding: 1rem;
 .mobile-layout{
 display: none;
 }
+.menu-mobile{
+  display: none;
+}
 @media screen and (max-width: 800px) {
   .homepage, .form{
     width: 100%;
@@ -335,8 +338,10 @@ display: none;
   .navbar {
     position: relative;
   }
-  .navbar ul {
+  .menu{
     display: none;
+  }
+  .menu-mobile{
     right: 0%;
     top: 60%;
     flex-direction: column;
@@ -345,6 +350,7 @@ display: none;
     padding: 2rem;
     border-radius: 20px;
     border: 1px solid black;
+    z-index: 900;
   }
   .logo-container {
     display: flex;
@@ -451,5 +457,9 @@ display: none;
 .box h3{
 padding-bottom: 2rem;
   color:  rgb(174, 131, 22);
+}
+
+.profile-icon-container{
+  display: none;
 }
 }

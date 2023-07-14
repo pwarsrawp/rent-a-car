@@ -12,11 +12,14 @@ menuButton.addEventListener("click", () => {
     menuButton.classList.remove("fa-bars");
     menuButton.classList.add("fa-xmark");
     menu.style.display = "flex"
+ 
+
 
   } else {
     menuButton.classList.add("fa-bars");
     menuButton.classList.remove("fa-xmark");
     menu.style.display = "none"
-    menu.appendChild("<li>aaaa</li>")
+   
+    
   }  
 });
