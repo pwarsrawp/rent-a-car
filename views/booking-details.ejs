@@ -1,0 +1,18 @@
+<h3>booking details</h3>
+
+<div class="booking-details">
+<h3><%- booking.car.brand %><%- booking.car.model %></h3>
+<img src="<%- booking.car.img %>" alt="">
+<h4>Class: <%- booking.car.class %> </h4>
+<p>    <i class="fa-solid fa-gear"></i> <%- booking.car.gearbox %> <i class="fa-solid fa-door-closed"></i> <%- booking.car.doors %> <i class="fa-solid fa-person"></i> <%- booking.car.pax %>    <i class="fa-solid fa-gas-pump"></i> <%- booking.car.fuel %></p>
+
+
+<h4>Pickup: <%- booking.startDate%><br> Return: <%- booking.endDate%></h4>
+
+<h4> Total price: <%- booking.total %> € <small> * (<%- booking.car.ppd %>€/day)</small></h4>
+
+<br>
+<a class="button" href="/book/<%- booking._id %>/delete">Cancel</a>
+<a class="button" href="/profile">back to profile</a>
+
+</div>

@@ -31,3 +31,15 @@
     </button>
   </div>
 
+
+  <!--only mobile-->
+  <div class="mobile-layout">
+    <% allCars.forEach((car, index) => { %>
+    <div class="box">
+      <img src="<%- car.img %>" alt="">
+      <h3><%- car.brand %></h3>
+      <h4>€<%- car.ppd %>/day</h4>
+         <a href="/cars/<%- car._id %>">Details</a>
+     </div>
+     <% }) %>
+  </div>

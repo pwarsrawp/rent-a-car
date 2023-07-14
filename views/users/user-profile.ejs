@@ -1,13 +1,27 @@
-<div class="homepage">
+<div class="booking-page">
   <h3>Your Bookings</h3>
+
   <div class="booking-container">
+   
+    <% if (typeof booking==='undefined') { %>
+      <div>    
+       <div class="alert alert-info">
+         no bookings at the moment
+   
+       
+       </div>
+       <br>
+       <a class="button" href="/cars">Get started</a>  
+     </div>
+   <% } %>
+
 
     <% bookings.forEach(booking => { %>
     <div class="booking">
       <img class="card-img-top" src="<%- booking.car.img%>" alt="car image">
       <div class="booking-body">
         <h5 class="booking-title"><%- booking.car.brand  %> <%- booking.car.model  %></h5>
-        <p class="booking-text"><%- booking.startDate%> - <%- booking.endDate%></p>
+        <p class="booking-text">Pickup: <%- booking.startDate%><br> <br> Return: <%- booking.endDate%></p>
         <p class="booking-text"><%- booking.total  %> €</p>
         <div class="booking-buttons">
           <a class="button" href="/book/<%- booking._id %>">Details</a>
