@@ -13,6 +13,7 @@ const {
 /* GET home page */
 router.get("/", (req, res, next) => {
   res.render("index",   { userid:req.session.currentUser});
+  console.log(req.session.currentUser)
 });
 
 // CAR PAGE
