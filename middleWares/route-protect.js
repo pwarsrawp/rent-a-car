@@ -13,7 +13,16 @@ const isLoggedOut = (req, res, next) => {
 	next();
 };
 
+const isAdmin = (req, res, next) => {
+	if (req.session.currentUser.role !== 'admin') {
+		return res.redirect("/");
+	}
+	next();
+};
+
+
 module.exports = {
 	isLoggedIn,
-	isLoggedOut
+	isLoggedOut,
+	isAdmin
 };

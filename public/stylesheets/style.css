@@ -150,7 +150,14 @@ align-items: center;
   display: flex;
   justify-content: flex-end;
   width: 130px;
+  align-items: center;
+  gap: 10px
 }
+.profile-icon-container h3 {
+  color: #556080;
+}
+
+
 
 #menu-button {
   display: none;
@@ -330,6 +337,35 @@ display: none;
 .menu-mobile{
   display: none;
 }
+
+.admin-container {
+  display: flex;
+  gap: 20px;
+}
+
+#bookings-admin-container {
+  display: block;
+
+}
+
+#branches-admin-container {
+  display: none;
+  
+}
+
+#users-admin-container {
+  display: none;
+}
+
+#cars-admin-container {
+  display: none;
+}
+
+#admin-panel-tabs {
+margin-bottom: 2rem;
+}
+
+
 @media screen and (max-width: 800px) {
   .homepage, .form{
     width: 100%;
