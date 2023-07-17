@@ -68,14 +68,16 @@
 <div id="users-admin-container" class="admin-container">
 
   <h3>Users</h3>
-  <a class="button" href="#">Add new User</a>
+  <a class="button" href="/user">Add new User</a>
   <div class="body-container">
   <% users.forEach(user => { %>
   <div class="booking-admin">
     <h5><%- user.username %></h5>
     <div class="booking-buttons">
       <a class="button" href="/user/<%- user._id %>/edit">Edit</a>
-      <a class="button" href="/user/<%- user._id %>/delete">Delete</a>
+      <form action="/user/<%- user._id %>/delete" method="post">
+        <button type="submit">Delete</button>
+      </form>
     </div>
   </div>
   <% }) %>

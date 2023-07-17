@@ -1,0 +1,20 @@
+<h3>Make a new User</h3>
+
+<form action="/user" method="post" class="form">
+  <input type="text" class="form-control" name="username" required placeholder="your username" />
+
+  <input type="email" class="form-control" name="email" required placeholder="your email" />
+
+
+  <input type="password" class="form-control" name="password" required placeholder="your password" />
+
+  <label for="" id="new-user-role-input-text-color">Select user's role:
+    <select name="role" class="form-control">
+      <option value="user">User</option>
+      <option value="admin">Admin</option>
+    </select>
+  </label>
+  <button type="submit">Create</button>
+
+
+</form>
