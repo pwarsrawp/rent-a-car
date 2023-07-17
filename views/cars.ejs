@@ -10,7 +10,7 @@
             <div class="carousel-item  <%- index===0 ? 'active': '' %> ">
                 <img src="<%- car.img %>" class="d-block " style="width: 50%;" alt="...">
                 <div class="carousel-caption d-none d-md-block">
-                    <h3><%- car.brand %><%- car.model %></h3>
+                    <h3><%- car.brand %> <%- car.model %></h3>
                     <h3><%- car.class %> <i class="fa-solid fa-gear"></i> <%- car.gearbox %> <i class="fa-solid fa-door-closed"></i> <%- car.doors %> <i class="fa-solid fa-person"></i> <%- car.pax %>  </h3>
               
                     <a href="/cars/<%- car._id %>">select </a>

@@ -1,0 +1,12 @@
+<h3>
+    Edit  Branch
+</h3>
+
+<form action="/branch/<%- branch._id%>/edit" method="post" class="form">
+
+
+      <input type="text" class="form-control" name="name" required  value="<%- branch.name%>"/>
+
+
+    <button type="submit">Update</button>
+  </form>

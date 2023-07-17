@@ -20,40 +20,58 @@
 </div>
 
 <div id="bookings-admin-container" class="admin-container">
+  <h3>Bookings</h3>
+  <div class="body-container">
   <% bookings.forEach(booking => { %>
   <div class="booking">
     <div class="booking-body">
-      <h5><%-booking.user.username %></h5>
+      <h5>  %>  
+     <%-   booking.userId.username %>
+   </h5>
       <h5 class="booking-title"><%- booking.car.brand  %> <%- booking.car.model  %></h5>
       <p class="booking-text">Pickup: <%- booking.startDate%><br> <br> Return: <%- booking.endDate%></p>
       <p class="booking-text"><%- booking.total  %> €</p>
       <div class="booking-buttons">
-        <a class="button" href="/book/<%- booking._id %>/edit">Edit</a>
+        <a class="button" href="/book/<%- booking._id %>">Details</a>
         <a class="button" href="/book/<%- booking._id %>/delete">Delete</a>
       </div>
     </div>
   </div>
   <% }) %>
+  </div>
 </div>
 
 <div id="branches-admin-container" class="admin-container">
+   <h3>Branches</h3>
+  <a class="button" href="/branch" >Add new Branch</a>
+ <div class="body-container">
   <% branches.forEach(branch => { %>
-  <div class="booking">
-    <h5><%- branch.name %></h5>
-    <div class="booking-buttons">
-      <a class="button" href="/branch/<%- branch._id %>/edit">Edit</a>
-      <a class="button" href="/branch/<%- branch._id %>/delete">Delete</a>
-    </div>
-  </div>
+    <div class="booking-admin">
+      <h5><%- branch.name %></h5>
+      <div class="booking-buttons">
+        <a class="button" href="/branch/<%- branch._id %>/edit">Edit</a>
+        <form action="/branch/<%- branch._id %>/delete" method="post">
+          <button type="submit">Delete</button>
+        </form>
 
-  <% }) %>
-  <a class="button" href="#">Add new Branch</a>
+      </div>
+    </div>
+  
+    <% }) %>
+ </div> 
+ 
+ 
 </div>
 
 
+
 <div id="users-admin-container" class="admin-container">
+
+  <h3>Users</h3>
+  <a class="button" href="#">Add new User</a>
+  <div class="body-container">
   <% users.forEach(user => { %>
-  <div class="booking">
+  <div class="booking-admin">
     <h5><%- user.username %></h5>
     <div class="booking-buttons">
       <a class="button" href="/user/<%- user._id %>/edit">Edit</a>
@@ -61,21 +79,29 @@
     </div>
   </div>
   <% }) %>
-  <a class="button" href="#">Add new User</a>
+  </div>
+ 
 </div>
 
 <div id="cars-admin-container" class="admin-container">
+<h3>Cars </h3>
+<a class="button" href="/car">Add new Car</a>
+  <div class="body-container">
   <% cars.forEach(car => { %>
   <div class="booking">
-    <img src="<%- car.img %>" class="d-block " style="width: 50%;" alt="...">
+    <img src="<%- car.img %>"  alt="...">
     <h5><%- car.class %></h5>
     <h5><%- car.brand %></h5>
     <h5><%- car.model %></h5>
     <div class="booking-buttons">
       <a class="button" href="/car/<%- car._id %>/edit">Edit</a>
-      <a class="button" href="/car/<%- car._id %>/delete">Delete</a>
+      <form action="/car/<%- car._id %>/delete" method="post">
+        <button type="submit">Delete</button>
+      </form>
+    
     </div>
   </div>
   <% }) %>
-  <a class="button" href="#">Add new Car</a>
+  </div>
+
 </div>

@@ -1,0 +1,21 @@
+<h3>Edit Car</h3>
+
+<form action="/car/<%- car._id%>/edit" method="post" enctype="multipart/form-data" class="form">
+
+    <input type="text" class="form-control" name="brand" required value="<%- car.brand%>">
+ 
+    <input type="text" class="form-control" name="model" required value="<%- car.model%>">
+
+    <input type="text" class="form-control" name="class" required value="<%- car.class%>">
+    <input type="text" class="form-control" name="gearbox" required value="<%- car.gearbox%>">
+    <input type="text" class="form-control" name="fuel" required value="<%- car.fuel%>">
+    <input type="text" class="form-control" name="doors" required value="<%- car.doors%>">
+    <input type="text" class="form-control" name="pax" required value="<%- car.pax%>">
+    <input type="text" class="form-control" name="luggage" required value="<%- car.luggage%>">
+    <input type="text" class="form-control" name="ppd" required value="<%- car.ppd%>">
+    
+     
+    <input type="file" name="img" >
+
+  <button type="submit">Update</button>
+</form>
