@@ -5,16 +5,16 @@
 <div id="admin-panel-tabs">
   <ul class="nav nav-pills nav-fill">
     <li class="nav-item">
-      <button id="bookings-admin-button">Bookings</button>
+      <button class="nav-link active" id="bookings-admin-button">Bookings</button>
     </li>
     <li class="nav-item">
-      <button id="branches-admin-button">Branches</button>
+      <button class="nav-link" id="branches-admin-button">Branches</button>
     </li>
     <li class="nav-item">
-      <button id="users-admin-button">Users</button>
+      <button class="nav-link" id="users-admin-button">Users</button>
     </li>
     <li class="nav-item">
-      <button id="cars-admin-button">Cars</button>
+      <button class="nav-link " id="cars-admin-button">Cars</button>
     </li>
   </ul>
 </div>
@@ -51,7 +51,7 @@
       <div class="booking-buttons">
         <a class="button" href="/branch/<%- branch._id %>/edit">Edit</a>
         <form action="/branch/<%- branch._id %>/delete" method="post">
-          <button type="submit">Delete</button>
+          <button class="button" type="submit">Delete</button>
         </form>
 
       </div>
@@ -76,7 +76,7 @@
     <div class="booking-buttons">
       <a class="button" href="/user/<%- user._id %>/edit">Edit</a>
       <form action="/user/<%- user._id %>/delete" method="post">
-        <button type="submit">Delete</button>
+        <button class="button" type="submit">Delete</button>
       </form>
     </div>
   </div>
@@ -98,7 +98,7 @@
     <div class="booking-buttons">
       <a class="button" href="/car/<%- car._id %>/edit">Edit</a>
       <form action="/car/<%- car._id %>/delete" method="post">
-        <button type="submit">Delete</button>
+        <button class="button" type="submit">Delete</button>
       </form>
     
     </div>
