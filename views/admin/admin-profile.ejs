@@ -1,4 +1,3 @@
-<h3>admin panel</h3>
 
 
 
@@ -26,10 +25,11 @@
   <div class="booking">
     <div class="booking-body">
       <h5>  %>  
-     <%-   booking.userId.username %>
+    Customer:  <%-   booking.userId.username %>
    </h5>
       <h5 class="booking-title"><%- booking.car.brand  %> <%- booking.car.model  %></h5>
       <p class="booking-text">Pickup: <%- booking.startDate%><br> <br> Return: <%- booking.endDate%></p>
+      <p class="booking-text">Where: <%- booking.branch  %> </p>
       <p class="booking-text"><%- booking.total  %> €</p>
       <div class="booking-buttons">
         <a class="button" href="/book/<%- booking._id %>">Details</a>
@@ -97,7 +97,7 @@
     <h5><%- car.model %></h5>
     <div class="booking-buttons">
       <a class="button" href="/car/<%- car._id %>/edit">Edit</a>
-      <form action="/car/<%- car._id %>/delete" method="post">
+      <form action="/car/<%- car._id %>/delete" method="post" style="margin:0; padding:0; display: inline-block;">
         <button class="button" type="submit">Delete</button>
       </form>
     

@@ -1,45 +1,55 @@
-<h1>Choose your car</h1>
+
 
 
 <div id="carouselExampleCaptions" class="carousel slide">
- 
-    <div class="carousel-inner">
-        <% allCars.forEach((car, index) => { %>
-     
-           
-            <div class="carousel-item  <%- index===0 ? 'active': '' %> ">
-                <img src="<%- car.img %>" class="d-block " style="width: 50%;" alt="...">
-                <div class="carousel-caption d-none d-md-block">
-                    <h3><%- car.brand %> <%- car.model %></h3>
-                    <h3><%- car.class %> <i class="fa-solid fa-gear"></i> <%- car.gearbox %> <i class="fa-solid fa-door-closed"></i> <%- car.doors %> <i class="fa-solid fa-person"></i> <%- car.pax %>  </h3>
-              
-                    <a href="/cars/<%- car._id %>">select </a>
-                </div>
-              </div>
-           <% }) %>
-   
-    
-   
-    </div>
-    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
-      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-      <span class="visually-hidden">Previous</span>
-    </button>
-    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
-      <span class="carousel-control-next-icon" aria-hidden="true"></span>
-      <span class="visually-hidden">Next</span>
-    </button>
-  </div>
 
-
-  <!--only mobile-->
-  <div class="mobile-layout">
+  <div class="carousel-inner">
     <% allCars.forEach((car, index) => { %>
-    <div class="box">
-      <img src="<%- car.img %>" alt="">
-      <h3><%- car.brand %></h3>
-      <h4>€<%- car.ppd %>/day</h4>
-         <a href="/cars/<%- car._id %>">Details</a>
-     </div>
-     <% }) %>
+
+
+    <div class="carousel-item  <%- index===0 ? 'active': '' %> "><%- car.pax %>
+      <img src="<%- car.img %>" class="d-block " style="width: 50%;" alt="...">
+      <div class="carousel-caption d-none d-md-block">
+        <div class="brand-model-title"><h3><%- car.brand %> <%- car.model %></h3></div>
+        <h3>
+          <div class="car-carousel-icons-outter-container">
+            <div class="car-carousel-icons-inner-container"><img src="/images/gas-station.png" alt="gas pump icon" class="car-carousel-icons"> <%- car.fuel %></div>
+            <div class="car-carousel-icons-inner-container"><img src="/images/gears-black.png" alt="gear icon" class="car-carousel-icons"> <%- car.gearbox %></div>
+          </div>
+          <div class="car-carousel-icons-outter-container">
+            <div class="car-carousel-icons-inner-container"><img src="/images/car-door-black-full.png" alt="car door icon" class="car-carousel-icons"> <%- car.doors %></div>
+            <div class="car-carousel-icons-inner-container"><img src="/images/car-seat-black-full.png" alt="car seat icon" class="car-carousel-icons"> <%- car.pax %></div>
+            <div class="car-carousel-icons-inner-container"><img src="/images/luggage-black-full.png" alt="luggage case icon" class="car-carousel-icons"> <%- car.luggage %></div>
+          </div>
+        </h3>
+
+        <a href="/cars/<%- car._id %>">select </a>
+      </div>
+    </div>
+    <% }) %>
+
+
+
   </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>
+
+
+<!--only mobile-->
+<div class="mobile-layout">
+  <% allCars.forEach((car, index) => { %>
+  <div class="box">
+    <img src="<%- car.img %>" alt="">
+    <h3><%- car.brand %></h3>
+    <h4>€<%- car.ppd %>/day</h4>
+    <a href="/cars/<%- car._id %>">Details</a>
+  </div>
+  <% }) %>
+</div>
