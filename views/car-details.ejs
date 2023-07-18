@@ -1,36 +1,32 @@
-<h3 class="title"><%- car.brand %><%- car.model %></h3>
 <div class="details">
-
+  <h3 class="title"><%- car.brand %><%- car.model %></h3>
 
   <div class="info">
     <ul>
       <li>
-        Class: <%- car.class %>
+        <img src="/images/gears-black.png" alt="gear icon" class="car-carousel-icons"> <%- car.gearbox %>
       </li>
       <li>
-        <i class="fa-solid fa-gear"></i> <%- car.gearbox %>
+        <img src="/images/gas-station.png" alt="car door icon" class="car-carousel-icons"> <%- car.fuel %>
       </li>
       <li>
-        <i class="fa-solid fa-door-closed"></i> <%- car.doors %>
+        <img src="/images/car-seat-black-full.png" alt="car seat icon" class="car-carousel-icons"> <%- car.pax %>
       </li>
       <li>
-        <i class="fa-solid fa-person"></i> <%- car.pax %>
+        <img src="/images/car-door-black-full.png" alt="gas pump icon" class="car-carousel-icons"> <%- car.seats %>
       </li>
       <li>
-        <i class="fa-solid fa-gas-pump"></i> <%- car.fuel %>
+        <img src="/images/luggage-black-full.png" alt="luggage case icon" class="car-carousel-icons"> <%- car.luggage %>
       </li>
       <li>
-        <i class="fa-solid fa-briefcase"></i> <%- car.luggage %>
-      </li>
-      <li>
-        <i class="fa-solid fa-hand-holding-dollar"></i></i> <%- car.ppd %>
+        <img src="/images/euro-sign-black.png" alt="euro sign icon" class="car-carousel-icons"> <%- car.ppd %>
       </li>
     </ul>
 
 
 
   </div>
-  <div class="picture">
+  <div class="car-details-picture">
     <img src="<%- car.img %>" alt="">
   </div>
 
