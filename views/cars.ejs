@@ -7,7 +7,7 @@
     <% allCars.forEach((car, index) => { %>
 
 
-    <div class="carousel-item  <%- index===0 ? 'active': '' %> "><%- car.pax %>
+    <div class="carousel-item  <%- index===0 ? 'active': '' %> ">
       <img src="<%- car.img %>" class="d-block " style="width: 50%;" alt="...">
       <div class="carousel-caption d-none d-md-block">
         <div class="brand-model-title"><h3><%- car.brand %> <%- car.model %></h3></div>

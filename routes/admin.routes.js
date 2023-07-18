@@ -47,7 +47,7 @@ router.get("/admin", isLoggedIn, isAdmin, async (req, res, next) => {
 
 // BRANCH NEW
 router.get("/branch", isLoggedIn, isAdmin, async (req, res, next) => {
-  res.render("admin/newBranch");
+  res.render("admin/newBranch", { userid: req.session.currentUser });
 });
 
 router.post("/branch", async (req, res, next) => {
@@ -59,7 +59,7 @@ router.post("/branch", async (req, res, next) => {
 router.get("/branch/:id/edit", isLoggedIn, isAdmin, async (req, res, next) => {
   const branch = await Branch.findById(req.params.id);
 
-  res.render("admin/editBranch", { branch });
+  res.render("admin/editBranch", { branch, userid: req.session.currentUser });
 });
 
 router.post("/branch/:id/edit", async (req, res, next) => {
