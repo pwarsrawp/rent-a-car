@@ -551,7 +551,7 @@ ul {
   }
 
   .box {
-    background-color: rgb(47, 46, 45);
+    background-color: var(--clr-primary-900);
     box-shadow: 1px 1px rgba(0, 0, 0, 0.4);
     width: 100%;
     height: auto;
@@ -567,7 +567,7 @@ ul {
 
   .box a {
     position: absolute;
-    background-color: #ffd95a;
+    background-color: var(--clr-primary-400);
     padding: 1rem 2.5rem;
     color: rgb(249, 240, 240);
     border: none;
@@ -578,7 +578,7 @@ ul {
     font-size: 1rem;
   }
   .box a:hover {
-    background-color: rgb(174, 131, 22);
+    background-color: var(--clr-primary-600);
   }
   .box h4 {
     padding-left: 1.5rem;
@@ -591,7 +591,7 @@ ul {
   }
   .box h3 {
     padding-bottom: 2rem;
-    color: rgb(174, 131, 22);
+    color: var(--clr-primary-400);
   }
 
   .profile-icon-container {
