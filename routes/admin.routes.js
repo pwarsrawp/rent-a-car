@@ -95,7 +95,7 @@ router.post("/car", fileUploader.single("img"), async (req, res, next) => {
 router.get("/car/:id/edit", isLoggedIn, isAdmin, async (req, res, next) => {
   const car = await Car.findById(req.params.id);
 
-  res.render("admin/editCar", { car });
+  res.render("admin/editCar", { car, userid: req.session.currentUser });
 });
 
 router.post(
@@ -141,7 +141,7 @@ router.post("/user", async (req, res, next) => {
 router.get("/user/:id/edit", isLoggedIn, isAdmin, async (req, res, next) => {
   const user = await User.findById(req.params.id);
 
-  res.render("admin/editUser", { user });
+  res.render("admin/editUser", { user, userid: req.session.currentUser });
 });
 
 router.post("/user/:id/edit", async (req, res, next) => {

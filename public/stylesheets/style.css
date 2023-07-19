@@ -431,14 +431,25 @@ button {
 }
 .nav-link {
   background-color: var(--clr-primary-900) !important;
-  color: var(--clr-primary-200);
+  color: var(--clr-primary-200) !important;
   text-transform: uppercase;
   font-weight: bold;
 }
 .nav-link:hover {
   background-color: var(--clr-primary-600) !important;
-  color: aliceblue !important;
+  color: var(--clr-primary-200) !important;
 }
+.nav-link:visited {
+  background-color: var(--clr-primary-900) !important;
+  color: var(--clr-primary-200) !important;
+}
+.nav-link:active {
+  background-color: var(--clr-primary-600) !important;
+  color: var(--clr-primary-200) !important;
+}
+
+
+
 .title-mobile {
   display: none;
 }
