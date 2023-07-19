@@ -13,7 +13,7 @@ font-family: 'Poppins', sans-serif;
 body {
   font-family: 'Poppins', sans-serif;
   height: 100vh;
-  background-image: url("../images/bg.png");
+  background-image: url("../images/bg-test.png");
   background-size: cover;
   background-repeat: no-repeat;
   background-attachment: fixed;
@@ -34,12 +34,17 @@ ul {
   list-style: none;
 }
 
+button {
+  border: none;
+  outline: none;
+}
+
 .homepage {
   width: 600px;
   margin: 0 auto;
   height: 100%;
   background-color: var(--clr-primary-900);
-  border-radius: 50px;
+  border-radius: 15px;
   padding: 4rem 0.2rem;
   box-shadow: 1px 1px rgba(0, 0, 0, 0.3);
   text-align: center;
@@ -79,7 +84,7 @@ ul {
   margin: 0 auto;
   height: 100%;
   background-color: var(--clr-primary-900);
-  border-radius: 50px;
+  border-radius: 15px;
   padding: 4rem;
   box-shadow: 1px 1px rgba(0, 0, 0, 0.3);
   gap: 2rem;
@@ -193,7 +198,12 @@ ul {
 }
 
 .brand-model-title {
-  text-align: left;
+  text-align: left;  
+}
+
+.brand-model-title h3 {
+  font-size: 2rem;
+  font-weight: 700;
 }
 
 .car-carousel-icons-outter-container {
@@ -224,7 +234,7 @@ ul {
   display: flex;
   gap: 4rem;
   background-color: var(--clr-primary-900);
-  border-radius: 50px;
+  border-radius: 15px;
   padding: 4rem;
   box-shadow: 1px 1px rgba(0, 0, 0, 0.3);
   flex-wrap: wrap;
@@ -334,11 +344,14 @@ ul {
   margin: 0 auto;
   height: 100%;
   background-color: var(--clr-primary-900);
-  border-radius: 50px;
+  border-radius: 15px;
   padding: 4rem 0.2rem;
   box-shadow: 1px 1px rgba(0, 0, 0, 0.3);
   text-align: center;
   color: var(--clr-primary-200);
+}
+.booking-details h3 {
+  font-family: 'Merriweather', serif;
 }
 .booking-details .car-image {
   background-size: cover;

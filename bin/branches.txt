@@ -1,0 +1,38 @@
+const branches = [
+  {
+    name: "Athens",
+  },
+  {
+    name: "Berlin",
+  },
+  {
+    name: "Copenhagen",
+  },
+  {
+    name: "Dublin",
+  },
+  {
+    name: "Helsinki",
+  },
+  {
+    name: "London",
+  },
+  {
+    name: "Madrid",
+  },
+  {
+    name: "Oslo",
+  },
+  {
+    name: "Paris",
+  },
+  {
+    name: "Rome",
+  },
+  {
+    name: "Stockholm",
+  },
+  {
+    name: "Vienna",
+  },
+];
