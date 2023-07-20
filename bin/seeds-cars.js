@@ -1,5 +1,3 @@
-// bin/seeds.js
-
 const mongoose = require("mongoose");
 const Branch = require("../models/Branch.model");
 const Car = require("../models/Car.model");
@@ -16,45 +14,6 @@ mongoose
   .catch((err) => {
     console.error("Error connecting to mongo: ", err);
   });
-
-const branches = [
-  {
-    name: "Athens",
-  },
-  {
-    name: "Berlin",
-  },
-  {
-    name: "Copenhagen",
-  },
-  {
-    name: "Dublin",
-  },
-  {
-    name: "Helsinki",
-  },
-  {
-    name: "London",
-  },
-  {
-    name: "Madrid",
-  },
-  {
-    name: "Oslo",
-  },
-  {
-    name: "Paris",
-  },
-  {
-    name: "Rome",
-  },
-  {
-    name: "Stockholm",
-  },
-  {
-    name: "Vienna",
-  },
-];
 
 const cars = [
   {
@@ -170,19 +129,12 @@ const cars = [
 ];
 
 Car.create(cars)
-  .then((carsFromDB) => {
-    console.log(`Created ${carsFromDB.length} cars`);
-  })
-  .catch((err) =>
-    console.log(`An error occurred while creating books from the DB: ${err}`)
-  );
-Branch.create(branches)
   .then((branchesFromDB) => {
-    console.log(`Created ${branchesFromDB.length} branches`);
+    console.log(`Created ${carsFromDB.length} cars`);
 
     // Once created, close the DB connection
     mongoose.connection.close();
   })
   .catch((err) =>
-    console.log(`An error occurred while creating books from the DB: ${err}`)
+    console.log(`An error occurred while creating cars from the DB: ${err}`)
   );

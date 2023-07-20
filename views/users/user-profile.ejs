@@ -3,16 +3,10 @@
 
   <div class="booking-container">
    
-    <% if (typeof bookings ==='undefined') { %>
+    <% if (bookings.length === 0) { %>
       <div>    
-       <div class="alert alert-info">
-         no bookings at the moment
-   
-       
-       </div>
-       <br>
-       <a class="button" href="/cars">Get started</a>  
-     </div>
+       This looks so empty, <a href="/cars">place a booking</a> now!
+      </div>
    <% } %>
 
 
