@@ -46,27 +46,27 @@ router.get("/admin", isLoggedIn, isAdmin, async (req, res, next) => {
 });
 
 // BRANCH NEW
-router.get("/branch", isLoggedIn, isAdmin, async (req, res, next) => {
+router.get("/branch", isLoggedIn, isAdmin, (req, res, next) => {
   res.render("admin/newBranch", { userid: req.session.currentUser });
 });
 
-router.post("/branch", async (req, res, next) => {
+router.post("/branch", (req, res, next) => {
   Branch.create(req.body);
 
   res.redirect("/admin");
 });
+
 // BRANCH EDIT
 router.get("/branch/:id/edit", isLoggedIn, isAdmin, async (req, res, next) => {
   const branch = await Branch.findById(req.params.id);
-
   res.render("admin/editBranch", { branch, userid: req.session.currentUser });
 });
 
 router.post("/branch/:id/edit", async (req, res, next) => {
   await Branch.findByIdAndUpdate(req.params.id, req.body);
-
   res.redirect("/admin");
 });
+
 // BRANCH DELETE
 router.post(
   "/branch/:id/delete",
@@ -74,27 +74,25 @@ router.post(
   isAdmin,
   async (req, res, next) => {
     await Branch.findByIdAndDelete(req.params.id);
-
     res.redirect("/admin");
   }
 );
 
 // CAR NEW
-router.get("/car", isLoggedIn, isAdmin, async (req, res, next) => {
+router.get("/car", isLoggedIn, isAdmin, (req, res, next) => {
   res.render("admin/newCar", { userid: req.session.currentUser });
 });
 
 router.post("/car", fileUploader.single("img"), async (req, res, next) => {
   const payload = { ...req.body };
   payload.img = req.file.path;
-  Car.create(payload);
-
+  await Car.create(payload);
   res.redirect("/admin");
 });
+
 // CAR EDIT
 router.get("/car/:id/edit", isLoggedIn, isAdmin, async (req, res, next) => {
   const car = await Car.findById(req.params.id);
-
   res.render("admin/editCar", { car, userid: req.session.currentUser });
 });
 
@@ -108,21 +106,19 @@ router.post(
     } else {
       delete payload.img;
     }
-
     await Car.findByIdAndUpdate(req.params.id, payload);
-
     res.redirect("/admin");
   }
 );
+
 // CAR DELETE
 router.post("/car/:id/delete", async (req, res, next) => {
   await Car.findByIdAndDelete(req.params.id);
-
   res.redirect("/admin");
 });
 
 // USER NEW
-router.get("/user", isLoggedIn, isAdmin, async (req, res, next) => {
+router.get("/user", isLoggedIn, isAdmin, (req, res, next) => {
   res.render("admin/newUser", { userid: req.session.currentUser });
 });
 
@@ -137,10 +133,10 @@ router.post("/user", async (req, res, next) => {
     console.log("Error creating new user", error);
   }
 });
+
 // USER EDIT
 router.get("/user/:id/edit", isLoggedIn, isAdmin, async (req, res, next) => {
   const user = await User.findById(req.params.id);
-
   res.render("admin/editUser", { user, userid: req.session.currentUser });
 });
 
@@ -156,10 +152,10 @@ router.post("/user/:id/edit", async (req, res, next) => {
   }
   res.redirect("/admin");
 });
+
 // USER DELETE
 router.post("/user/:id/delete", async (req, res, next) => {
   await User.findByIdAndDelete(req.params.id);
-
   res.redirect("/admin");
 });
 

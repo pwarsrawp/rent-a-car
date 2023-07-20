@@ -10,23 +10,23 @@ const {
   isLoggedIn,
 } = require("../middleWares/route-protect.js");
 
-/* GET home page */
+// HOME PAGE
 router.get("/", (req, res, next) => {
   res.render("index",   { userid:req.session.currentUser});
   console.log(req.session.currentUser)
 });
 
-// CAR PAGE
+// ALL CARS PAGE
 router.get("/cars", async (req, res, next) => {
   try {
     const allCars = await Car.find();
     res.render("cars", { allCars , userid:req.session.currentUser});
-
   } catch (error) {
     console.log("There was an error displaying all cars", error);
   }
 });
-//details car page
+
+// CAR DETAILS PAGE
 router.get("/cars/:id", isLoggedIn, async (req, res, next) => {
   try {
     const car = await Car.findById(req.params.id);
@@ -36,9 +36,9 @@ router.get("/cars/:id", isLoggedIn, async (req, res, next) => {
     console.log("There was an error displaying all cars", error);
   }
 });
-//booking
+
+// SINGLE BOOKING
 router.post("/book/:id", isLoggedIn, async (req, res, next) => {
-  //console.log(req.body);
   try {
     const {startDate, endDate, branch } =req.body
     if(startDate>=endDate) {
@@ -56,9 +56,7 @@ router.post("/book/:id", isLoggedIn, async (req, res, next) => {
       const car=await Car.findById(req.params.id)
       const branches = await Branch.find();
       res.render('car-details', {car, branches, errorMsg: 'not available'})
-    }
-    else{
-
+    } else {
       const bookInfo = req.body;
       bookInfo.userId = req.session.currentUser;
       bookInfo.car = req.params.id;
@@ -69,36 +67,28 @@ router.post("/book/:id", isLoggedIn, async (req, res, next) => {
      let differenceBetweenTwoDates=date1.getTime() - date2.getTime()
       
       bookInfo.total= (differenceBetweenTwoDates/ (1000 * 3600 * 24)) *car.ppd 
-      //console.log("bookInfo::", bookInfo);
       const newBook = await Booking.create(bookInfo);
-      //res.send(newBook);
       res.redirect("/profile");
     }
-
-    }
-  } catch (error) {
+  }} catch (error) {
     console.log("There was an error displaying all cars", error);
   }
 });
-//delete booking 
-router.get('/book/:id/delete', async(req,res)=>{
 
+
+// BOOKING DELETE
+router.get('/book/:id/delete', async(req,res)=>{
   await Booking.findByIdAndDelete(req.params.id);
   res.redirect("/profile");
 })
 router.get("/book/:id", isLoggedIn, async (req, res, next) => {
   const booking= await Booking.findById(req.params.id).populate("car")
-  const user=await User.findById(req.session.currentUser)
-
- 
+  const user=await User.findById(req.session.currentUser) 
     let date1=new Date(booking.endDate)
     let date2=new Date(booking.startDate)
     booking.endDate= date1.getDate() + ' ' + date1.toLocaleString("en-US",{month: 'short'}) + ' ' + date1.getFullYear()
     booking.startDate= date2.getDate() + ' ' + date2.toLocaleString("en-US",{month: 'short'}) + ' ' + date2.getFullYear()
-    booking.total=booking.total.toFixed(2)
-
- 
- 
+    booking.total=booking.total.toFixed(2) 
   res.render("booking-details", {booking, user,  userid: req.session.currentUser});
 });
 
