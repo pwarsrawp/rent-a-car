@@ -13,7 +13,7 @@ font-family: 'Poppins', sans-serif;
 body {
   font-family: 'Poppins', sans-serif;
   height: 100vh;
-  background-image: url("../images/bg-test.png");
+  background-image: url("../images/background.png");
   background-size: cover;
   background-repeat: no-repeat;
   background-attachment: fixed;

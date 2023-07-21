@@ -5,7 +5,8 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-  <title><%= appTitle %></title>
+  <title>Saubin Cars</title>
+  <link rel="icon" type="image/x-icon" href="/images/favicon.png">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
   <link rel="stylesheet" href="/stylesheets/style.css" />
@@ -14,7 +15,7 @@
 <body>
   <div class="container">
     <nav class="navbar">
-      <div class="logo-container"><a href="/"><img src="/images/logo-3.png" alt=""></a></div>
+      <div class="logo-container"><a href="/"><img src="/images/logo.png" alt=""></a></div>
       <ul class="menu" >
         <li><a href="/cars">cars</a></li>
               <% if (typeof userid!='undefined') { %>
@@ -35,7 +36,7 @@
               <li><a href="/profile/">profile</a> </li>
       </ul>
       <div class="profile-icon-container">
-        <a href="/profile"><img class="icons-desktop" src="/images/profile-icon-2.png" alt=""></a>
+        <a href="/profile"><img class="icons-desktop" src="/images/profile-icon.png" alt=""></a>
         <% if (typeof userid!='undefined') { %>
           <h3><%- userid.username %></h3>
         <% } %>

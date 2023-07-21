@@ -13,7 +13,6 @@ const {
 // HOME PAGE
 router.get("/", (req, res, next) => {
   res.render("index",   { userid:req.session.currentUser});
-  console.log(req.session.currentUser)
 });
 
 // ALL CARS PAGE
@@ -71,7 +70,7 @@ router.post("/book/:id", isLoggedIn, async (req, res, next) => {
       res.redirect("/profile");
     }
   }} catch (error) {
-    console.log("There was an error displaying all cars", error);
+    console.log("An error ocurred displaying the list of cars", error);
   }
 });
 

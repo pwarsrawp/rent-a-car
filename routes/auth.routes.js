@@ -44,8 +44,6 @@ router.post("/login", async (req, res) => {
         req.body.password,
         checkUser.passwordHash
       );
-      console.log("do they match", doesPasswordMatch);
-
       if (doesPasswordMatch) {
         checkUser.passwordHash = "****";
         req.session.currentUser = checkUser;
@@ -61,7 +59,7 @@ router.post("/login", async (req, res) => {
       res.render("auth/login", { errorMessage: "Invalid inputs" });
     }
   } catch (err) {
-    console.log(err);
+    console.log("An error ocurred during login", err);
   }
 });
 
